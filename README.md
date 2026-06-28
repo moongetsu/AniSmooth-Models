@@ -19,7 +19,7 @@
 This repository hosts the AI model weights for the [AniSmooth](https://github.com/moongetsu/AniSmooth) After Effects extension. Files are published as **release assets**, grouped by purpose into one release per category. The extension downloads what it needs automatically and verifies each file by SHA-256 before loading.
 
 > [!NOTE]
-> Weight files only, no code. A ✓ marks models AniSmooth uses today; the rest are mirrored for upcoming features. Original models belong to their respective authors.
+> Weight files only, no code. A ✓ marks models AniSmooth uses today; the rest are mirrored for upcoming features. See [CREDITS.md](CREDITS.md) for model authors and sources.
 
 **Download URL pattern:**
 
