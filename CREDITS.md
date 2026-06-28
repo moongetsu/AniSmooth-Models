@@ -1,6 +1,6 @@
 <h1 align="center">Credits</h1>
 
-All models belong to their respective authors. This repository only mirrors weights — no code, no modifications.
+All models belong to their respective authors. This repository only mirrors weights — no code, no modifications. Models sourced from [TAS-Models-Host](https://github.com/NevermindNilas/TAS-Models-Host) and original authors.
 
 ---
 
