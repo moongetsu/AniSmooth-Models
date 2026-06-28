@@ -3,60 +3,52 @@
 </h1>
 <p align="center">
   <b>Model weight host for AniSmooth.</b><br>
-  <i>RIFE interpolation and ShuffleCUGAN / Adore / Fallin upscale models, served as release assets.</i>
+  <i>Restore & denoise model weights, served as release assets.</i>
 </p>
 
 <p align="center">
   <a href="https://github.com/moongetsu/AniSmooth">AniSmooth Extension</a> ·
-  <a href="#-models">Models</a> ·
+  <a href="#-restore--denoise">Restore</a> ·
   <a href="#-usage">Usage</a>
 </p>
 
 <hr>
 
-This repository stores the AI model weights used by the [AniSmooth](https://github.com/moongetsu/AniSmooth) After Effects extension. Files are published as **release assets** (tag `main`) and downloaded automatically by the extension on first use.
+This repository hosts the AI model weights for the [AniSmooth](https://github.com/moongetsu/AniSmooth) After Effects extension. Files are published as **release assets**, grouped by purpose into one release per category. The extension downloads what it needs automatically and verifies each file by SHA-256 before loading.
 
 > [!NOTE]
-> These are weight files only. There is no code here. For the extension itself, see the [AniSmooth repo](https://github.com/moongetsu/AniSmooth).
+> Weight files only, no code. A ✓ marks models AniSmooth uses today; the rest are mirrored for upcoming features. Original models belong to their respective authors.
+
+**Download URL pattern:**
+
+```
+https://github.com/moongetsu/AniSmooth-Models/releases/download/restore/<filename>
+```
 
 ---
 
-## 🧠 Models
+## 🧹 Restore & Denoise
 
-All files live under the **`main`** release. Download URL pattern:
+Release tag: **`restore`** (deblock, dehalo, denoise, fixers).
 
-```
-https://github.com/moongetsu/AniSmooth-Models/releases/download/main/<filename>
-```
-
-| Model Key | File | Size | Type |
-| :-- | :-- | :-- | :-- |
-| `rife4.25` | `rife425.pth` | ~22 MB | Frame interpolation |
-| `rife4.25-heavy` | `rife425_heavy.pth` | ~87 MB | Frame interpolation |
-| `adore` | `adore.pth` | ~5.7 MB | Upscaling |
-| `fallin_soft` | `Fallin_soft.pth` | ~5.7 MB | Upscaling |
-| `fallin_strong` | `Fallin_strong.pth` | ~5.7 MB | Upscaling |
-| `shufflecugan` | `sudo_shuffle_cugan_9.584.969.pth` | ~5.7 MB | Upscaling |
-
-<details>
-<summary>SHA-256 checksums</summary>
-
-| File | SHA-256 |
-| :-- | :-- |
-| `rife425.pth` | `040ed973997570f4f85489be3d8eb64be9c0cffdf0a9f049443b6a4838ed88f1` |
-| `rife425_heavy.pth` | `49f7c82d3866860683992042ba8eb559b9c01fbe2600b80a53c56de05bb13b6f` |
-| `adore.pth` | `443378bdc6db6cf4a75eea61ee7afc78b2c4b6a4d3b3981a40ff61f38bbc8f1a` |
-| `Fallin_soft.pth` | `910aa56a9a1187df97c3284177da1bc66836679350b2613191340734937e9960` |
-| `Fallin_strong.pth` | `14b8415199aa66a6507725408a66758ba2bff9286736f19f7f07524efd821a56` |
-| `sudo_shuffle_cugan_9.584.969.pth` | `88a6d89f04eaf27a9f7b60937857768a6bc04fb360670bd9951ef533acab0616` |
-
-</details>
+| File | Size | Used |
+| :-- | --: | :-: |
+| `1x_Anime1080Fixer_SuperUltraCompact.pth` | 0.1 MB | |
+| `1x_HurrDeblur_SuperUltraCompact.pth` | 0.4 MB | |
+| `1x_DeHalo_v1_Compact.pth` | 4.6 MB | |
+| `1x_DeH264_SPAN.safetensors` | 9.9 MB | |
+| `1xDeH264_realplksr.pth` | 28.2 MB | |
+| `1xDeJPG_realplksr_otf.pth` | 28.2 MB | |
+| `scunet_color_real_psnr.pth` | 68.6 MB | |
+| `drunet_deblocking_color.pth` | 124.5 MB | |
+| `1x_umzi_adc_gater3_v1.safetensors` | 155.5 MB | |
+| `NAFNet-GoPro-width64.pth` | 259.2 MB | |
 
 ---
 
 ## 📦 Usage
 
-AniSmooth downloads these automatically, no manual step needed. The extension verifies each file against the SHA-256 above before loading.
+AniSmooth downloads these automatically, no manual step needed. Each file is verified against its SHA-256 before loading.
 
 <details>
 <summary>Manual install</summary>
@@ -67,12 +59,6 @@ Place a file at:
 %APPDATA%\com.moongetsu.extensions\AniSmooth\backend\weights\<model-key>\<filename>
 ```
 
-Example: `...\weights\adore\adore.pth`.
+Example: `...\weights\1x_Anime1080Fixer_SuperUltraCompact\1x_Anime1080Fixer_SuperUltraCompact.pth`.
 
 </details>
-
----
-
-## ⚠️ Notice
-
-Weights are redistributed for use with AniSmooth. Original RIFE, ShuffleCUGAN, and related models belong to their respective authors.
